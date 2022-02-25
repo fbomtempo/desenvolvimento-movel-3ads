@@ -1,0 +1,68 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      Hello, Ionic!
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <div id="container">
+
+    <ion-item>
+      <ion-input placeholder="Nome" [(ngModel)]="data.nome"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-input placeholder="E-mail" [(ngModel)]="data.email"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-input placeholder="Senha" [(ngModel)]="data.senha"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-select placeholder="Curso" [(ngModel)]="data.curso">
+        <ion-select-option value="ads">Análise e Desenv. de SIstemas</ion-select-option>
+        <ion-select-option value="bcc">Ciência da Computação</ion-select-option>
+        <ion-select-option value="eng">Engenharia Cívil</ion-select-option>
+      </ion-select>
+    </ion-item>
+
+    <ion-item>
+      <ion-select placeholder="Periodos" [(ngModel)]="data.periodos" multiple="true">
+        <ion-select-option value="diurno">Diurno</ion-select-option>
+        <ion-select-option value="noturno">Noturno</ion-select-option>
+        <ion-select-option value="integral">Integral</ion-select-option>
+      </ion-select>
+    </ion-item>
+
+    <ion-item>
+      <ion-select placeholder="Formação" [(ngModel)]="data.formacoes" multiple="true">
+        <ion-select-option *ngFor="let f of formacoes" [value]="f">{{f.value}} - ({{f.title}})</ion-select-option>
+      </ion-select>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>Matriculado</ion-label>
+      <ion-checkbox color="dark" [(ngModel)]="data.matriculado"></ion-checkbox>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>Ativo</ion-label>
+      <ion-toggle color="dark" [(ngModel)]="data.ativo"></ion-toggle>
+    </ion-item>
+
+    <ion-button expand="block" color="primary"
+      (click)="confirmar()">Confirmar</ion-button>
+
+    <ion-button expand="block" color="warning"
+      (click)="cancelar()">Cancelar</ion-button>
+
+    <ion-button expand="block" color="danger"
+      (click)="remover()">Remover</ion-button>
+
+      <ion-button expand="block" color="success"
+      (click)="preencher()">Preencher</ion-button>
+  </div>
+</ion-content>

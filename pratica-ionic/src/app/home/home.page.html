@@ -1,0 +1,29 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      Formulario
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">Formulario</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <div id="container">
+    <strong>Formulário</strong>
+    <ion-item>
+      <ion-label for="nome">Nome</ion-label>
+      <ion-input id="nome" [(ngModel)]="dados.nome"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label for="ra">RA</ion-label>
+      <ion-input id="ra" [(ngModel)]="dados.ra"></ion-input>
+    </ion-item>
+    <ion-button color="danger" (click)="clear()">Limpar</ion-button>
+    <ion-button color="success" (click)="submit()">Enviar</ion-button>
+  </div>
+</ion-content>
